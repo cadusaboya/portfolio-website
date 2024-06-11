@@ -16,9 +16,10 @@ const Home = () => {
       <div className="flex flex-1 mt-20 justify-center space-x-20">
         <Card
           title="My portfolio website"
-          description="This is a website I'm proud to have built as a 3rd project. It's a place where I can showcase my projects and skills earnt"
+          description="This is a website I'm proud to have built as a 3rd project. It's a place where I can showcase my projects and skills earnt."
           imageUrl="/personal.png"
           skills={['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'Github']}
+          githubUrl='https://github.com/cadusaboya/portfolio-website'
         />
 
         <Card
@@ -27,7 +28,8 @@ const Home = () => {
                        The doctor is able to receive his payment imediately and the hospital would pay back to the app. 
                        It was an idea I had and developed from scratch."
           imageUrl="/factor.png"
-          skills={['Mobile Development', 'React Native', 'Django', 'PostgreSQL', 'Docker', 'Github', 'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
+          skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Github', 'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
+          githubUrl='https://github.com/cadusaboya/factor'
         />
       </div>
 
@@ -37,14 +39,16 @@ const Home = () => {
           description=" This was my final project in CS50 and the very 1st software I made. It's a Web application that makes the user's routine a gamefied experience, 
                         earning points when succesfully completing tasks and leaderboards to show rankings."
           imageUrl="/myroutine.png"
-          skills={['Flask', 'HTML', 'CSS', 'Javascript', 'SQLite']}
+          skills={['Python (Flask)', 'HTML', 'CSS', 'Javascript', 'SQLite']}
+          githubUrl='https://github.com/cadusaboya/myroutine'
         />
 
         <Card
           title="Soon..."
-          description="Your project could be in here, reach out and let's build something together"
+          description="Your project could be in here, reach out and let's build something together."
           imageUrl="loading.jpg"
           skills={[]}
+          githubUrl=''
         />
       </div>
 

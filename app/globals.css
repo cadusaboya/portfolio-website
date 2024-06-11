@@ -33,3 +33,12 @@ html {
     text-wrap: balance;
   }
 }
+
+.card-container {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
