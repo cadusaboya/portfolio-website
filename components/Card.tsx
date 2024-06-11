@@ -1,7 +1,7 @@
 const Card = ({ title, description, imageUrl, skills }: { title: string, description: string, imageUrl: string, skills: string[] }) => {
     return (
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img className="w-full h-64 object-cover object-center" src={imageUrl} alt={title} />
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-md">
+        <img className="w-full h-64" src={imageUrl} alt={title} />
         <div className="px-6 py-4">
           <h3 className="text-xl font-semibold mb-2">{title}</h3>
           <p className="text-gray-700 text-base mb-2">{description}</p>
