@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Card from '../components/Card'
+import AboutMe from '../components/AboutMe'
 
 const Home = () => {
   return (
@@ -8,14 +9,9 @@ const Home = () => {
         <Header />
       </div>
           
-      <div className="flex-col">
-        <div className="flex">
-          <img src="/my-img.jpeg" alt="My image" className="h-64 w-auto mt-10 mx-auto rounded-full border-4 border-white" />
-          <main className="flex flex-col justify-center mx-auto w-72 p-4">
-            <h1 className="text-4xl font-bold">Carlos Saboya</h1>
-            <p className="mt-4">Welcome to my portfolio website. I'm a software engineer and I love seeing my code turn into working products.</p>
-          </main>
-        </div>
+      <div className="flex-col justify-center pt-28">
+        <AboutMe />
+      </div>
 
         <h2 id="projects" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Projects</h2>
         <div className="flex flex-1 mt-20 justify-center space-x-20">
@@ -56,9 +52,6 @@ const Home = () => {
             githubUrl=''
           />
         </div>
-
-
-      </div>
     </body>
   )
 }
