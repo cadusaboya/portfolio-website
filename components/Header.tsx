@@ -1,15 +1,13 @@
-"use client";
-
 import Link from 'next/link'
 
 const Header = () => {
   return (
-    <header className="top-0 bg-gray-400 text-white w-72 mx-auto p-4 rounded-full mt-8">
-        <nav className="space-x-4">
-            <Link href="/" className="hover:text-gray-100">Home</Link>
-            <Link href="/about" className="hover:text-gray-100">About</Link>
-            <Link href="/projects" className="hover:text-gray-100">Projects</Link>
-            <Link href="/contact" className="hover:text-gray-100">Contact</Link>
+    <header className="fixed z-20 bg-gray-400 bg-opacity-50 w-72 mx-auto p-4 rounded-full mt-8">
+        <nav className="space-x-4 text-white hover:">
+            <a href="#home" className="hover:text-gray-100">Home</a>
+            <a href="#about" className="hover:text-gray-100">About</a>
+            <a href="#projects" className="hover:text-gray-200">Projects</a>
+            <a href="#contact" className="hover:text-gray-200">Contact</a>
         </nav>
     </header>
   )
