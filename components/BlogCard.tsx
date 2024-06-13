@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Box } from '@mui/material';
-import { useRouter } from 'next/navigation';
 
 const BlogCard = ({ title, description, image, url, date }: { title: string, description: string, image: string, url: string, date: string }) => {
-  const router = useRouter();
 
   const handleCardClick = () => {
-    router.push(url);
+    window.location.href = url;
   };
 
   return (
