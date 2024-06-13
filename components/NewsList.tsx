@@ -10,7 +10,7 @@ const newsArticles = [
     title: "MyRoutine",
     description: "MyRoutine was the first web app I built to conclude CS50 Harvard's course. Although I have a degree in Mechatronical Engineer, we never got to the point of developing softwares.",
     image: "/myroutine.png",
-    url: "/blog/myroutine",
+    url: "https://medium.com/@carlosepsaboya/myroutine-68b69c2dbe01",
     date: "2024-06-13"
   },
   {
