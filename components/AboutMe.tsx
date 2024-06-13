@@ -7,7 +7,7 @@ const AboutMe = () => {
         <img src="/my-img.jpeg" alt="My image" className="h-64 w-auto mx-auto rounded-full border-4 border-white" />
         <main className="flex flex-col mx-auto w-72 p-4">
             <h1 className="text-4xl font-bold">Carlos Saboya</h1>
-            <p className="mt-4">Welcome to my portfolio website. I'm a software engineer and I love seeing my code turn into working products.</p>
+            <p className="mt-4">Welcome to my portfolio website. I'm a software engineer and I love seeing my code go from an idea to a working product.</p>
         </main>
         <main className="flex flex-col mx-auto w-72 pt-4 pl-4">
             <h1 className="text-4xl font-bold">About me</h1>
