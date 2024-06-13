@@ -10,7 +10,7 @@ const Home = () => {
         <Header />
       </div>
           
-      <div className="flex-col justify-center pt-28">
+      <div id="about" className="flex-col justify-center pt-28">
         <AboutMe />
       </div>
 
@@ -22,6 +22,7 @@ const Home = () => {
           imageUrl="/personal.png"
           skills={['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'Github']}
           githubUrl='https://github.com/cadusaboya/portfolio-website'
+          mediumUrl=''
         />
 
         <Card
@@ -32,6 +33,7 @@ const Home = () => {
           imageUrl="/factor.png"
           skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Github', 'Unit Test', 'CI/CD Pipeline',  'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
           githubUrl='https://github.com/cadusaboya/factor'
+          mediumUrl=''
         />
       </div>
 
@@ -43,6 +45,7 @@ const Home = () => {
           imageUrl="/myroutine.png"
           skills={['Python (Flask)', 'HTML', 'CSS', 'Javascript', 'SQLite']}
           githubUrl='https://github.com/cadusaboya/myroutine'
+          mediumUrl='https://medium.com/@carlosepsaboya/myroutine-68b69c2dbe01'
         />
 
         <Card
@@ -51,6 +54,7 @@ const Home = () => {
           imageUrl="loading.jpg"
           skills={[]}
           githubUrl=''
+          mediumUrl=''
         />
       </div>
 
