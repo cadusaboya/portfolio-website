@@ -11,22 +11,27 @@ const newsArticles = [
     description: "MyRoutine was the first web app I built to conclude CS50 Harvard's course. Although I have a degree in Mechatronical Engineer, we never got to the point of developing softwares.",
     image: "/myroutine.png",
     url: "/blog/myroutine",
-    date: "2021-10-01"
+    date: "2024-06-13"
   },
   {
     title: "Article 2",
     description: "This is the description for article 2.",
-    image: "/personal.png",
+    image: "/loading.jpg",
     url: "/blog/article2",
-    date: "2021-10-02"
+    date: "2024-06-12"
+  },
+  {
+    title: "Article 3",
+    description: "This is the description for article 2.",
+    image: "/loading.jpg",
+    url: "/blog/article3",
+    date: "2024-06-11"
   }
 ];
 
 const NewsList = () => {
-    const router = useRouter();
-
     const handleViewMore = () => {
-      router.push('/blog');
+      window.location.href = "https://medium.com/@carlosepsaboya";
     };
 
   return (
@@ -44,8 +49,8 @@ const NewsList = () => {
           </Grid>
         ))}
       </Grid>
-      <Button variant="contained" color="primary" onClick={handleViewMore} sx={{ mt: 2 }}>
-        View More
+      <Button variant="outlined" color="primary" onClick={handleViewMore} sx={{ mt: 2 }}>
+        Check my Medium blog
       </Button>
     </Box>
   );
