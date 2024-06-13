@@ -1,4 +1,5 @@
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import the GitHub icon from react-icons
+import { FaMedium } from "react-icons/fa6";
 
 const AboutMe = () => {
   return (
@@ -11,14 +12,15 @@ const AboutMe = () => {
         <main className="flex flex-col mx-auto w-72 pt-4 pl-4">
             <h1 className="text-4xl font-bold">About me</h1>
             <p className="mt-4"><span className="font-bold">Age:</span> 27</p>
-            <p><span className="font-bold">Location:</span> 🇧🇷</p>
+            <p><span className="font-bold">Location:</span> Brazil 🇧🇷</p>
             <p><span className="font-bold">Languages:</span> Portuguese and English</p>
             <p><span className="font-bold">Likes:</span> Web3, Investing, E-sports, Games, Gym, Soccer, Travel</p>
 
             <div className="flex mt-2">
                 <a href="https://www.linkedin.com/in/carlossaboya/" target="_blank" rel="noopener noreferrer" className="mr-1"><FaLinkedin className="w-6 h-6" /></a>
                 <a href="https://www.instagram.com/cadusaboya_" target="_blank" rel="noopener noreferrer" className="mr-1"><FaInstagram className="w-6 h-6" /></a>
-                <a href="https://github.com/cadusaboya" target="_blank" rel="noopener noreferrer"><FaGithub className="w-6 h-6" /></a>
+                <a href="https://github.com/cadusaboya" target="_blank" rel="noopener noreferrer" className="mr-1"><FaGithub className="w-6 h-6" /></a>
+                <a href="https://medium.com/@carlosepsaboya" target="_blank" rel="noopener noreferrer"><FaMedium className="w-6 h-6" /></a>
             </div> 
         </main>
     </div>
