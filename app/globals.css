@@ -34,3 +34,15 @@ html {
   transform: scale(1.1);
   z-index: 10;
 }
+
+.MuiButton-colorPrimary{
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.MuiButton-colorPrimary:hover{
+  background-color: white;
+  color: black;
+  border-color: black;
+}
