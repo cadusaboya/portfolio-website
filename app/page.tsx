@@ -51,7 +51,7 @@ const Home = () => {
         <Card
           title="Soon..."
           description="Your project could be in here, reach out and let's build something together."
-          imageUrl="loading.jpg"
+          imageUrl="/loading.jpg"
           skills={[]}
           githubUrl=''
           mediumUrl=''
