@@ -10,7 +10,7 @@ const BlogCard = ({ title, description, image, url, date }: { title: string, des
   };
 
   return (
-    <Card sx={{ maxWidth: 600, width: '100%' }}>
+    <Card className="card-container" sx={{ maxWidth: 600, width: '100%', minHeight: 200}}>
       <CardActionArea onClick={handleCardClick}>
         <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }}>
           <CardContent sx={{ flex: 1 }}>
@@ -26,7 +26,7 @@ const BlogCard = ({ title, description, image, url, date }: { title: string, des
           </CardContent>
           <CardMedia
             component="img"
-            sx={{ width: { xs: '100%', sm: 200 }, height: 'auto' }}
+            sx={{ width: { xs: '100%', sm: 200 }, height: 200 }}
             image={image}
             alt={title}
           />
