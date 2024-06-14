@@ -18,9 +18,9 @@ const Home = () => {
       <div className="flex flex-1 mt-10 justify-center space-x-20">
         <Card
           title="My portfolio website"
-          description="This is a website I'm proud to have built as a 3rd project. It's a place where I can showcase my projects and skills earnt."
+          description="This is a website I'm proud to have built as my 3rd project. I used Next and Tailwind to quickly build a good looking UI, I consider this a big improvement over my first project, while spending less time on it. This is the place where I can showcase my projects and skills earnt."
           imageUrl="/personal.png"
-          skills={['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'Github']}
+          skills={['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Git']}
           githubUrl='https://github.com/cadusaboya/portfolio-website'
           mediumUrl=''
         />
@@ -31,7 +31,7 @@ const Home = () => {
                       The doctor is able to receive his payment imediately and the hospital would pay back to the app. 
                       It was an idea I had and developed from scratch."
           imageUrl="/factor.png"
-          skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Github', 'Unit Test', 'CI/CD Pipeline',  'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
+          skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Git', 'Unit Test', 'CI/CD Pipeline',  'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
           githubUrl='https://github.com/cadusaboya/factor'
           mediumUrl=''
         />
@@ -67,7 +67,9 @@ const Home = () => {
 
       <h2 id="contact" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Contact</h2>
 
-
+      <footer className="relative flex items-center justify-center w-full text-black text-center p-4">
+     &copy; Carlos Saboya 2024 <a href="/path/to/your/resume.pdf" download className="absolute right-4">Download my Resume</a>
+      </footer>
     </body>
   )
 }
