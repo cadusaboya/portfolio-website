@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Card from '../components/Card'
 import AboutMe from '../components/AboutMe'
 import NewsList from '../components/NewsList';
+import ContactForm from '@/components/ContactForm';
 
 const Home = () => {
   return (
@@ -66,6 +67,7 @@ const Home = () => {
       
 
       <h2 id="contact" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Contact</h2>
+      <ContactForm />
 
       <footer className="relative flex items-center justify-center w-full text-black text-center p-4">
      &copy; Carlos Saboya 2024 <a href="/path/to/your/resume.pdf" download className="absolute right-4">Download my Resume</a>
