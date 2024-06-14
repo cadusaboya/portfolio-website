@@ -69,7 +69,7 @@ const Home = () => {
       <h2 id="contact" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Contact</h2>
       <ContactForm />
 
-      <footer className="relative flex items-center justify-center w-full text-black text-center p-4">
+      <footer className="relative flex items-center justify-center w-full text-black text-center p-4 mt-20">
      &copy; Carlos Saboya 2024 <a href="/path/to/your/resume.pdf" download className="absolute right-4">Download my Resume</a>
       </footer>
     </body>
