@@ -34,7 +34,7 @@ const Home = () => {
           imageUrl="/factor.png"
           skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Git', 'Unit Test', 'CI/CD Pipeline',  'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
           githubUrl='https://github.com/cadusaboya/factor'
-          mediumUrl=''
+          mediumUrl='https://medium.com/@carlosepsaboya/factor-diving-into-mobile-app-development-cf0266e66511'
         />
       </div>
 

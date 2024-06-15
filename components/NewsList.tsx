@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { Grid, Button, Box } from '@mui/material';
 import BlogCard from './BlogCard';
-import { useRouter } from 'next/navigation';
 
 const newsArticles = [
   {
@@ -14,18 +13,18 @@ const newsArticles = [
     date: "2024-06-13"
   },
   {
-    title: "Article 2",
-    description: "This is the description for article 2.",
-    image: "/loading.jpg",
-    url: "/blog/article2",
-    date: "2024-06-12"
+    title: "Factor — Diving into Mobile App Development",
+    description: "Factor is a startup in which I joined as a partner by developing the mobile app and backend. It was a challenge for me since I had no previous experience in mobile app development.",
+    image: "/factor_main.png",
+    url: "https://medium.com/@carlosepsaboya/factor-diving-into-mobile-app-development-cf0266e66511",
+    date: "2024-06-14"
   },
   {
-    title: "Article 3",
-    description: "This is the description for article 2.",
-    image: "/loading.jpg",
-    url: "/blog/article3",
-    date: "2024-06-11"
+    title: "MyRoutine",
+    description: "MyRoutine was the first web app I built to conclude CS50 Harvard's course. Although I have a degree in Mechatronical Engineer, we never got to the point of developing softwares.",
+    image: "/myroutine.png",
+    url: "https://medium.com/@carlosepsaboya/myroutine-68b69c2dbe01",
+    date: "2024-06-13"
   }
 ];
 
