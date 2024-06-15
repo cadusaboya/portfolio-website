@@ -6,11 +6,11 @@ import BlogCard from './BlogCard';
 
 const newsArticles = [
   {
-    title: "MyRoutine",
-    description: "MyRoutine was the first web app I built to conclude CS50 Harvard's course. Although I have a degree in Mechatronical Engineer, we never got to the point of developing softwares.",
-    image: "/myroutine.png",
-    url: "https://medium.com/@carlosepsaboya/myroutine-68b69c2dbe01",
-    date: "2024-06-13"
+    title: "Building my own portfolio website",
+    description: "Building my own portfolio website was a great opportunity for web development. By using Next.js and Tailwind, I was able to build something with more speed and a better UI than my previous website. This really shows the improvement of my Software Engineering skills after building Factor.",
+    image: "/personal.png",
+    url: "https://medium.com/@carlosepsaboya/building-my-own-portfolio-website-eba5589e7736",
+    date: "2024-06-15"
   },
   {
     title: "Factor — Diving into Mobile App Development",
