@@ -1,17 +1,17 @@
 "use client"
 
 import React, { useState } from 'react';
-import { set, useForm } from 'react-hook-form';
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import { Button } from '@mui/material';
 import axios from 'axios';
 
 const ContactForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
   const [isDisabled, setIsDisabled] = useState(false);
   const [message, setMessage] = useState('');
   const [isSent, setIsSent] = useState(false);
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     if (isSent) {
       setMessage('Already sent a message. Please wait for a response.');
       return;
