@@ -23,7 +23,7 @@ const Home = () => {
           imageUrl="/personal.png"
           skills={['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Git']}
           githubUrl='https://github.com/cadusaboya/portfolio-website'
-          mediumUrl=''
+          mediumUrl='https://medium.com/@carlosepsaboya/building-my-own-portfolio-website-eba5589e7736'
         />
 
         <Card
