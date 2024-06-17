@@ -60,11 +60,11 @@ const Home = () => {
       </div>
 
       <h2 id="contact" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Contact</h2>
-      <div className="px-4 sm:px-0">
+      <div className="w-full">
         <ContactForm />
       </div>
 
-      <footer className="relative flex items-center justify-center w-full text-black text-center p-4 mt-20">
+      <footer className="relative flex items-center md:justify-center w-full text-black text-center p-4 mt-20">
         &copy; Carlos Saboya 2024 <a href="Resume.pdf" download className="absolute right-4">Download my Resume</a>
       </footer>
     </div>
