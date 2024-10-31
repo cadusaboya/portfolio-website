@@ -17,11 +17,11 @@ const Home = () => {
       <div className="flex flex-wrap justify-center mt-10 gap-10 px-4 sm:px-0">
         <Card
           title="My portfolio website"
-          description="This is a website I'm proud to have built as my 3rd project. I used Next and Tailwind to quickly build a good looking UI, I consider this a big improvement over my first project, while spending less time on it. This is the place where I can showcase my projects and skills earnt."
+          description="I used Next and Tailwind to quickly build a good looking UI, I consider this a big improvement over my first project, while spending less time on it. This is the place where I can showcase my projects and skills earnt."
           imageUrl="/personal.png"
           skills={['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Git']}
           githubUrl='https://github.com/cadusaboya/portfolio-website'
-          mediumUrl='https://medium.com/@carlosepsaboya/building-my-own-portfolio-website-eba5589e7736'
+          videoUrl=''
         />
 
         <Card
@@ -30,7 +30,7 @@ const Home = () => {
           imageUrl="/factor.png"
           skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Git', 'Unit Test', 'CI/CD Pipeline',  'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
           githubUrl='https://github.com/cadusaboya/factor'
-          mediumUrl='https://medium.com/@carlosepsaboya/factor-diving-into-mobile-app-development-cf0266e66511'
+          videoUrl='https://www.youtube.com/watch?v=nfYBKjFsFUg'
         />
       </div>
 
@@ -41,7 +41,7 @@ const Home = () => {
           imageUrl="/myroutine.png"
           skills={['Python (Flask)', 'HTML', 'CSS', 'Javascript', 'SQLite']}
           githubUrl='https://github.com/cadusaboya/myroutine'
-          mediumUrl='https://medium.com/@carlosepsaboya/myroutine-68b69c2dbe01'
+          videoUrl='https://www.youtube.com/watch?v=5Rv5uDOijV4'
         />
 
         <Card
@@ -50,13 +50,8 @@ const Home = () => {
           imageUrl="/loading.jpg"
           skills={[]}
           githubUrl=''
-          mediumUrl=''
+          videoUrl=''
         />
-      </div>
-
-      <h2 id="blog" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Recent Posts</h2>
-      <div className="mt-10 px-4 sm:px-0">
-        <NewsList />
       </div>
 
       <h2 id="contact" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Contact</h2>
