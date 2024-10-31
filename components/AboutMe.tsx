@@ -29,7 +29,6 @@ const AboutMe = () => {
           <a href="https://www.linkedin.com/in/carlossaboya/" target="_blank" rel="noopener noreferrer" className="mr-1"><FaLinkedin className="w-6 h-6" /></a>
           <a href="https://www.instagram.com/cadusaboya_" target="_blank" rel="noopener noreferrer" className="mr-1"><FaInstagram className="w-6 h-6" /></a>
           <a href="https://github.com/cadusaboya" target="_blank" rel="noopener noreferrer" className="mr-1"><FaGithub className="w-6 h-6" /></a>
-          <a href="https://medium.com/@carlosepsaboya" target="_blank" rel="noopener noreferrer" className="mr-1"><FaMedium className="w-6 h-6" /></a>
           <a href="https://web.whatsapp.com/send?phone=+5591984147769" target="_blank" rel="noopener noreferrer"><FaWhatsapp className="w-6 h-6" /></a>
         </div> 
       </main>
