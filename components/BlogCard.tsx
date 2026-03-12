@@ -1,37 +1,50 @@
-import * as React from 'react';
-import { Card, CardActionArea, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import Image from 'next/image'
 
-const BlogCard = ({ title, description, image, url, date }: { title: string, description: string, image: string, url: string, date: string }) => {
+interface BlogCardProps {
+  title: string
+  description: string
+  image: string
+  url: string
+  date: string
+}
 
-  const handleCardClick = () => {
-    window.location.href = url;
-  };
-
+const BlogCard = ({ title, description, image, url, date }: BlogCardProps) => {
   return (
-    <Card className="card-container" sx={{ maxWidth: 600, width: '100%', minHeight: 200}}>
-      <CardActionArea onClick={handleCardClick}>
-        <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }}>
-          <CardContent sx={{ flex: 1 }}>
-          <Typography variant="caption" color="text.secondary">
-              {date}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify' }}>
-              {description}
-            </Typography>
-          </CardContent>
-          <CardMedia
-            component="img"
-            sx={{ width: { xs: '100%', sm: 200 }, height: 200 }}
-            image={image}
-            alt={title}
-          />
-        </Box>
-      </CardActionArea>
-    </Card>
-  );
-};
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card-container group flex flex-col sm:flex-row bg-surface border border-border
+                 rounded-2xl overflow-hidden max-w-2xl w-full
+                 hover:border-primary/30 transition-all duration-300"
+    >
+      {/* Content */}
+      <div className="flex-1 p-5 sm:p-6 flex flex-col justify-center">
+        <time className="text-xs text-text-muted font-medium uppercase tracking-wide mb-2">
+          {date}
+        </time>
+        <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-primary
+                       transition-colors duration-200">
+          {title}
+        </h3>
+        <p className="text-text-secondary text-sm leading-relaxed line-clamp-3">
+          {description}
+        </p>
+      </div>
 
-export default BlogCard;
+      {/* Image */}
+      <div className="relative sm:w-48 h-48 sm:h-auto sm:min-h-[180px] overflow-hidden">
+        <Image
+          src={image}
+          alt={`Blog: ${title}`}
+          fill
+          sizes="(max-width: 640px) 100vw, 192px"
+          className="object-cover transition-transform duration-500
+                     group-hover:scale-105"
+        />
+      </div>
+    </a>
+  )
+}
+
+export default BlogCard

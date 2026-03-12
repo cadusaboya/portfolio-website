@@ -1,38 +1,97 @@
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'; // Import the GitHub icon from react-icons
-import { FaMedium } from "react-icons/fa6";
-import Image from 'next/image';
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FaMedium } from 'react-icons/fa6'
+import { FiArrowDown } from 'react-icons/fi'
+import Image from 'next/image'
+
+const socialLinks = [
+  { href: 'https://www.linkedin.com/in/carlossaboya/', icon: FaLinkedin, label: 'LinkedIn' },
+  { href: 'https://github.com/cadusaboya', icon: FaGithub, label: 'GitHub' },
+  { href: 'https://medium.com/@carlosepsaboya', icon: FaMedium, label: 'Medium' },
+  { href: 'https://www.instagram.com/cadusaboya_', icon: FaInstagram, label: 'Instagram' },
+  { href: 'https://web.whatsapp.com/send?phone=+5591984147769', icon: FaWhatsapp, label: 'WhatsApp' },
+]
 
 const AboutMe = () => {
   return (
-    <div className="flex flex-col sm:flex-row items-center sm:items-start">
-      <div className="md:ml-20 flex-shrink-0">
-        <Image 
-          src="/my-img.jpeg" 
-          alt="My image" 
-          width={300} 
-          height={300} 
-          className="h-64 w-64 sm:w-auto mx-auto rounded-full border-4 border-white" 
-        />
-      </div>
-      <main className="flex flex-col mx-auto sm:w-72 p-4 text-center sm:text-left">
-        <h1 className="text-4xl font-bold">Carlos Saboya</h1>
-        <p className="mt-4">Welcome to my portfolio website. I&apos;m a software engineer and I love seeing my code go from an idea to a working product.</p>
-      </main>
-      <main className="flex flex-col mx-auto sm:w-72 pt-4 pl-4 text-center sm:text-left">
-        <h1 className="text-4xl font-bold">About me</h1>
-        <p className="mt-4"><span className="font-bold">Age:</span> 27</p>
-        <p><span className="font-bold">Location:</span> Brazil 🇧🇷</p>
-        <p><span className="font-bold">Languages:</span> Portuguese and English</p>
-        <p><span className="font-bold">Likes:</span> Web3, Investing, E-sports, Games, Gym, Soccer, Travel</p>
+    <section className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
+      {/* Ambient glow */}
+      <div className="glow-orb glow-orb-1" />
+      <div className="glow-orb glow-orb-2" />
 
-        <div className="flex justify-center sm:justify-start mt-2">
-          <a href="https://www.linkedin.com/in/carlossaboya/" target="_blank" rel="noopener noreferrer" className="mr-1"><FaLinkedin className="w-6 h-6" /></a>
-          <a href="https://www.instagram.com/cadusaboya_" target="_blank" rel="noopener noreferrer" className="mr-1"><FaInstagram className="w-6 h-6" /></a>
-          <a href="https://github.com/cadusaboya" target="_blank" rel="noopener noreferrer" className="mr-1"><FaGithub className="w-6 h-6" /></a>
-          <a href="https://web.whatsapp.com/send?phone=+5591984147769" target="_blank" rel="noopener noreferrer"><FaWhatsapp className="w-6 h-6" /></a>
-        </div> 
-      </main>
-    </div>
+      <div className="relative flex flex-col items-center text-center">
+        {/* Profile image */}
+        <div className="relative mb-8">
+          <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-primary via-accent to-primary opacity-60 blur-lg animate-pulse" />
+          <Image
+            src="/my-img.jpeg"
+            alt="Carlos Saboya"
+            width={320}
+            height={320}
+            className="relative rounded-full border-4 border-background object-cover w-40 h-40"
+            priority
+            quality={95}
+          />
+        </div>
+
+        {/* Name with gradient */}
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-text-primary mb-3 tracking-tight">
+          Carlos <span className="gradient-text">Saboya</span>
+        </h1>
+
+        <p className="text-lg sm:text-xl text-text-secondary font-medium mb-6">
+          Full-Stack Software Engineer
+        </p>
+
+        <p className="text-text-muted text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+          I architect and build web &amp; mobile applications end-to-end,
+          from system design to App Store deployment.
+          Fluent in English and Portuguese.
+        </p>
+
+        {/* CTA buttons */}
+        <div className="flex flex-col sm:flex-row items-center gap-3 mb-8">
+          <a
+            href="/Resume.pdf"
+            download
+            className="px-7 py-3 rounded-full bg-primary text-white font-medium text-sm
+                       hover:bg-primary-hover transition-all duration-200 hover:-translate-y-0.5
+                       shadow-lg shadow-primary/25"
+          >
+            Download Resume
+          </a>
+          <a
+            href="#contact"
+            className="px-7 py-3 rounded-full border border-border text-text-primary font-medium text-sm
+                       hover:border-primary hover:text-primary transition-all duration-200 hover:-translate-y-0.5"
+          >
+            Get in Touch
+          </a>
+        </div>
+
+        {/* Social links */}
+        <div className="flex items-center gap-2.5 mb-10">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="p-2.5 rounded-full bg-surface border border-border
+                         text-text-secondary hover:text-primary hover:border-primary
+                         transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <social.icon className="w-5 h-5" />
+            </a>
+          ))}
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="animate-bounce text-text-muted">
+          <FiArrowDown className="w-5 h-5" />
+        </div>
+      </div>
+    </section>
   )
 }
 

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build:*)",
+      "Bash(node -e:*)",
+      "Bash(npx next lint:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git -C \"/c/Users/carlo/Desktop/Coding/ERP\" config --get remote.origin.url)",
+      "Bash(dir:*)"
+    ]
+  }
+}

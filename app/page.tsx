@@ -1,69 +1,105 @@
-import Header from '../components/Header';
-import Card from '../components/Card';
-import AboutMe from '../components/AboutMe';
-import NewsList from '../components/NewsList';
-import ContactForm from '@/components/ContactForm';
+import Header from '@/components/Header'
+import Card from '@/components/Card'
+import AboutMe from '@/components/AboutMe'
+import Skills from '@/components/Skills'
+import NewsList from '@/components/NewsList'
+import ContactForm from '@/components/ContactForm'
+import SectionObserver from '@/components/SectionObserver'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaMedium } from 'react-icons/fa6'
+import { featuredProject, otherProjects } from '@/data/projects'
+
+const footerLinks = [
+  { href: 'https://www.linkedin.com/in/carlossaboya/', icon: FaLinkedin, label: 'LinkedIn' },
+  { href: 'https://github.com/cadusaboya', icon: FaGithub, label: 'GitHub' },
+  { href: 'https://medium.com/@carlosepsaboya', icon: FaMedium, label: 'Medium' },
+]
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
-      
-      <div id="about" className="flex flex-col items-center pt-28 px-4 sm:px-0">
+      <SectionObserver />
+
+      {/* Hero */}
+      <section id="about" className="min-h-screen flex items-center justify-center pt-16 pb-8">
         <AboutMe />
-      </div>
+      </section>
 
-      <h2 id="projects" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Projects</h2>
-      <div className="flex flex-wrap justify-center mt-10 gap-10 px-4 sm:px-0">
-        <Card
-          title="My portfolio website"
-          description="I used Next and Tailwind to quickly build a good looking UI, I consider this a big improvement over my first project, while spending less time on it. This is the place where I can showcase my projects and skills earnt."
-          imageUrl="/personal.png"
-          skills={['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Git']}
-          githubUrl='https://github.com/cadusaboya/portfolio-website'
-          videoUrl=''
-        />
+      {/* Skills */}
+      <section id="skills" className="py-24 bg-surface/40">
+        <Skills />
+      </section>
 
-        <Card
-          title="Factor"
-          description="Mobile app that charges a small fee to antecipate the payments of hospitals to doctors. The doctor is able to receive his payment immediately and the hospital would pay back to the app. It was an idea I had and developed from scratch."
-          imageUrl="/factor.png"
-          skills={['Mobile Development', 'React Native', 'Python (Django)', 'PostgreSQL', 'Docker', 'Git', 'Unit Test', 'CI/CD Pipeline',  'AWS ECR', 'AWS ECS', 'AWS RDS', 'Route 53']}
-          githubUrl='https://github.com/cadusaboya/factor'
-          videoUrl='https://www.youtube.com/watch?v=nfYBKjFsFUg'
-        />
-      </div>
+      {/* Projects */}
+      <section id="projects" className="py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-heading text-2xl sm:text-3xl font-bold text-text-primary text-center mb-14">
+            Featured Work
+          </h2>
+          <Card {...featuredProject} featured />
 
-      <div className="flex flex-wrap justify-center mt-20 gap-10 px-4 sm:px-0">
-        <Card
-          title="MyRoutine"
-          description="This was my final project in CS50 and the very 1st software I made. It's a Web application that makes the user's routine a gamefied experience, earning points when successfully completing tasks and leaderboards to show rankings."
-          imageUrl="/myroutine.png"
-          skills={['Python (Flask)', 'HTML', 'CSS', 'Javascript', 'SQLite']}
-          githubUrl='https://github.com/cadusaboya/myroutine'
-          videoUrl='https://www.youtube.com/watch?v=5Rv5uDOijV4'
-        />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {otherProjects.map((project) => (
+              <Card key={project.title} {...project} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <Card
-          title="Soon..."
-          description="Your project could be in here, reach out and let's build something together."
-          imageUrl="/loading.jpg"
-          skills={[]}
-          githubUrl=''
-          videoUrl=''
-        />
-      </div>
+      {/* Blog - temporarily hidden
+      <section id="blog" className="py-24 bg-surface/40">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-heading text-2xl sm:text-3xl font-bold text-text-primary text-center mb-4">
+            Writing
+          </h2>
+          <p className="text-text-muted text-center mb-14 max-w-md mx-auto">
+            I document my engineering journey and the lessons I learn along the way.
+          </p>
+          <NewsList />
+        </div>
+      </section>
+      */}
 
-      <h2 id="contact" className="text-2xl font-bold mt-20 mx-auto flex justify-center">Contact</h2>
-      <div className="w-full">
-        <ContactForm />
-      </div>
+      {/* Contact */}
+      <section id="contact" className="py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-heading text-2xl sm:text-3xl font-bold text-text-primary text-center mb-4">
+            Let&apos;s Connect
+          </h2>
+          <p className="text-text-muted text-center mb-14 max-w-md mx-auto">
+            Open to opportunities, collaborations, and interesting conversations.
+          </p>
+          <ContactForm />
+        </div>
+      </section>
 
-      <footer className="relative flex items-center md:justify-center w-full text-black text-center p-4 mt-20">
-        &copy; Carlos Saboya 2024 <a href="Resume.pdf" download className="absolute right-4">Download my Resume</a>
+      {/* Footer */}
+      <footer className="border-t border-border py-8 mt-auto bg-surface/30">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-text-muted text-sm">
+              &copy; {new Date().getFullYear()} Carlos Saboya
+            </p>
+            <div className="flex items-center gap-4">
+              {footerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-text-muted hover:text-text-primary transition-colors"
+                >
+                  <link.icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
