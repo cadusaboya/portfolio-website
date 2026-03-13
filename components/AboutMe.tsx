@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaMedium } from 'react-icons/fa6'
 import { FiArrowDown } from 'react-icons/fi'
 import Image from 'next/image'
@@ -7,8 +7,6 @@ const socialLinks = [
   { href: 'https://www.linkedin.com/in/carlossaboya/', icon: FaLinkedin, label: 'LinkedIn' },
   { href: 'https://github.com/cadusaboya', icon: FaGithub, label: 'GitHub' },
   { href: 'https://medium.com/@carlosepsaboya', icon: FaMedium, label: 'Medium' },
-  { href: 'https://www.instagram.com/cadusaboya_', icon: FaInstagram, label: 'Instagram' },
-  { href: 'https://web.whatsapp.com/send?phone=+5591984147769', icon: FaWhatsapp, label: 'WhatsApp' },
 ]
 
 const AboutMe = () => {
@@ -40,12 +38,13 @@ const AboutMe = () => {
           </h1>
 
           <p className="text-xl sm:text-2xl text-text-secondary font-semibold mb-5">
-            I ship products people use.
+            I build SaaS platforms from zero to production.
           </p>
 
           <p className="text-text-muted text-base sm:text-lg leading-relaxed max-w-lg mb-8">
-            Full-stack engineer who turns ideas into production-ready web &amp; mobile apps.
-            From database design to deployment, I own the entire stack.
+            Full-stack engineer with a Mechatronics Engineering degree from UFMG.
+            I build with TypeScript, React, Next.js, Python, and Django — from database
+            design to cloud deployment, I own the entire stack.
             Fluent in English and Portuguese.
           </p>
 

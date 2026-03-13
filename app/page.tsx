@@ -8,6 +8,8 @@ import SectionObserver from '@/components/SectionObserver'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaMedium } from 'react-icons/fa6'
 import { featuredProject, otherProjects } from '@/data/projects'
+import { fetchMediumArticles } from '@/lib/medium'
+import { articles as fallbackArticles } from '@/data/articles'
 
 const footerLinks = [
   { href: 'https://www.linkedin.com/in/carlossaboya/', icon: FaLinkedin, label: 'LinkedIn' },
@@ -15,7 +17,14 @@ const footerLinks = [
   { href: 'https://medium.com/@carlosepsaboya', icon: FaMedium, label: 'Medium' },
 ]
 
-const Home = () => {
+const Home = async () => {
+  let articles
+  try {
+    articles = await fetchMediumArticles()
+  } catch {
+    articles = fallbackArticles
+  }
+
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
@@ -47,7 +56,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Blog - temporarily hidden
+      {/* Blog */}
       <section id="blog" className="py-24 bg-surface/40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-heading text-2xl sm:text-3xl font-bold text-text-primary text-center mb-4">
@@ -56,10 +65,9 @@ const Home = () => {
           <p className="text-text-muted text-center mb-14 max-w-md mx-auto">
             I document my engineering journey and the lessons I learn along the way.
           </p>
-          <NewsList />
+          <NewsList articles={articles} />
         </div>
       </section>
-      */}
 
       {/* Contact */}
       <section id="contact" className="py-24">

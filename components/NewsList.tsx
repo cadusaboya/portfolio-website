@@ -1,9 +1,11 @@
-'use client'
-
 import BlogCard from './BlogCard'
-import { articles } from '@/data/articles'
+import { Article } from '@/data/articles'
 
-const NewsList = () => {
+interface NewsListProps {
+  articles: Article[]
+}
+
+const NewsList = ({ articles }: NewsListProps) => {
   return (
     <div className="flex flex-col items-center gap-4 w-full max-w-2xl mx-auto">
       {articles.map((article) => (

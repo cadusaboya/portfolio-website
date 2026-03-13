@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
 import { FaMedium } from 'react-icons/fa6'
 import { FiMail, FiMapPin } from 'react-icons/fi'
+import { toast } from 'sonner'
 import axios from 'axios'
 
 interface ContactFormData {
@@ -28,30 +29,21 @@ const contactSocials = [
 
 const ContactForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>()
-  const [isDisabled, setIsDisabled] = useState(false)
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [message, setMessage] = useState('')
+  const [sending, setSending] = useState(false)
   const [isSent, setIsSent] = useState(false)
 
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    if (isSent) {
-      setStatus('error')
-      setMessage('Already sent a message. Please wait for a response.')
-      return
-    }
+    if (isSent || sending) return
 
-    setIsDisabled(true)
-    setStatus('idle')
+    setSending(true)
     try {
-      const response = await axios.post('/api/send/', data)
-      setMessage(response.data.message)
-      setStatus('success')
+      await axios.post('/api/send/', data)
       setIsSent(true)
+      toast.success('Email sent successfully!')
     } catch {
-      setMessage('Failed to send email.')
-      setStatus('error')
+      toast.error('Failed to send email. Please try again.')
     } finally {
-      setIsDisabled(false)
+      setSending(false)
     }
   }
 
@@ -163,22 +155,17 @@ const ContactForm = () => {
           </div>
 
           <button
-            disabled={isDisabled}
+            disabled={sending || isSent}
             type="submit"
-            className="w-full px-8 py-3 rounded-xl bg-primary text-white font-medium text-sm
-                       hover:bg-primary-hover transition-all duration-200
-                       disabled:opacity-50 disabled:cursor-not-allowed"
+            className={`w-full px-8 py-3 rounded-xl font-medium text-sm transition-all duration-200
+                       disabled:cursor-not-allowed ${
+                         isSent
+                           ? 'bg-green-600 text-white opacity-90'
+                           : 'bg-primary text-white hover:bg-primary-hover disabled:opacity-50'
+                       }`}
           >
-            {isDisabled ? 'Sending...' : 'Send Message'}
+            {isSent ? 'Email Sent' : sending ? 'Sending...' : 'Send Message'}
           </button>
-
-          {message && (
-            <p className={`mt-4 text-center text-sm ${
-              status === 'error' ? 'text-red-400' : 'text-green-400'
-            }`}>
-              {message}
-            </p>
-          )}
         </form>
       </div>
     </div>

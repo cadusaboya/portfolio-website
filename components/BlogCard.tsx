@@ -33,12 +33,13 @@ const BlogCard = ({ title, description, image, url, date }: BlogCardProps) => {
       </div>
 
       {/* Image */}
-      <div className="relative sm:w-48 h-48 sm:h-auto sm:min-h-[180px] overflow-hidden">
+      <div className="relative sm:w-56 h-48 sm:h-auto sm:min-h-[200px] overflow-hidden shrink-0">
         <Image
           src={image}
           alt={`Blog: ${title}`}
           fill
-          sizes="(max-width: 640px) 100vw, 192px"
+          sizes="(max-width: 640px) 100vw, 224px"
+          quality={90}
           className="object-cover transition-transform duration-500
                      group-hover:scale-105"
         />

@@ -1,9 +1,8 @@
 import {
-  SiReact, SiNextdotjs, SiJavascript,
+  SiReact, SiNextdotjs, SiTypescript,
   SiPython, SiDjango,
   SiPostgresql, SiDocker, SiGit,
-  SiAmazonaws, SiVercel, SiNetlify, SiRailway,
-  SiAppstore,
+  SiAmazonaws, SiGithubactions,
 } from 'react-icons/si'
 import { TbBrandReactNative } from 'react-icons/tb'
 
@@ -11,22 +10,19 @@ const skills = [
   { name: 'React', icon: SiReact, color: '#61DAFB' },
   { name: 'Next.js', icon: SiNextdotjs, color: '' },
   { name: 'React Native', icon: TbBrandReactNative, color: '#61DAFB' },
-  { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+  { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
   { name: 'Python', icon: SiPython, color: '#3776AB' },
   { name: 'Django', icon: SiDjango, color: '#092E20' },
   { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
   { name: 'Docker', icon: SiDocker, color: '#2496ED' },
   { name: 'Git', icon: SiGit, color: '#F05032' },
   { name: 'AWS', icon: SiAmazonaws, color: '#FF9900' },
-  { name: 'Vercel', icon: SiVercel, color: '' },
-  { name: 'Netlify', icon: SiNetlify, color: '#00C7B7' },
-  { name: 'Railway', icon: SiRailway, color: '' },
-  { name: 'App Store', icon: SiAppstore, color: '#0D96F6' },
+  { name: 'CI/CD', icon: SiGithubactions, color: '#2088FF' },
 ]
 
 const Skills = () => {
   return (
-    <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="section-heading text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
         Tech Stack
       </h2>
