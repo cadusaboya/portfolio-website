@@ -43,7 +43,7 @@ const AboutMe = () => {
 
           <p className="text-text-muted text-base sm:text-lg leading-relaxed max-w-lg mb-8">
             Full-stack engineer with a Mechatronics Engineering degree from UFMG.
-            I build with TypeScript, React, Next.js, Python, and Django — from database
+            I build with TypeScript, React, Next.js, Python, and Django. From database
             design to cloud deployment, I own the entire stack.
             Fluent in English and Portuguese.
           </p>

@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Link } from 'react-scroll'
+import { useState, useEffect, useCallback } from 'react'
 import ThemeToggle from './ThemeToggle'
 import { FiMenu, FiX } from 'react-icons/fi'
 
@@ -15,11 +14,56 @@ const navItems = [
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
+
+  // Track active section with IntersectionObserver
+  useEffect(() => {
+    const sections = navItems.map(item => document.getElementById(item.to)).filter(Boolean) as HTMLElement[]
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter(e => e.isIntersecting)
+        if (visible.length > 0) {
+          // Pick the one closest to the top
+          visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+          setActiveSection(visible[0].target.id)
+        }
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    )
+
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault()
+    const el = document.getElementById(sectionId)
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+    setMobileOpen(false)
+  }, [])
+
+  const linkClass = (sectionId: string) =>
+    `cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+      activeSection === sectionId
+        ? 'text-primary bg-primary/10'
+        : 'text-text-secondary hover:text-text-primary hover:bg-surface-hover'
+    }`
+
+  const mobileLinkClass = (sectionId: string) =>
+    `cursor-pointer px-4 py-2 rounded-xl transition-all duration-200 text-center ${
+      activeSection === sectionId
+        ? 'text-primary bg-primary/10'
+        : 'text-text-secondary hover:text-text-primary hover:bg-surface-hover'
+    }`
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
@@ -29,20 +73,14 @@ const Header = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.to}
-              activeClass="!text-primary !bg-primary/10"
-              to={item.to}
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-              className="cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium
-                         text-text-secondary hover:text-text-primary hover:bg-surface-hover
-                         transition-all duration-200"
+              href={`#${item.to}`}
+              onClick={(e) => handleClick(e, item.to)}
+              className={linkClass(item.to)}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </div>
 
@@ -67,20 +105,14 @@ const Header = () => {
                         bg-surface/95 backdrop-blur-md border border-border
                         rounded-2xl shadow-xl p-4 flex flex-col gap-2">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.to}
-              to={item.to}
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-              className="cursor-pointer px-4 py-2 rounded-xl text-text-secondary
-                         hover:text-text-primary hover:bg-surface-hover
-                         transition-all duration-200 text-center"
-              onClick={() => setMobileOpen(false)}
+              href={`#${item.to}`}
+              onClick={(e) => handleClick(e, item.to)}
+              className={mobileLinkClass(item.to)}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </div>
       )}
