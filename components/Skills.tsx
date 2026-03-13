@@ -2,7 +2,7 @@ import {
   SiReact, SiNextdotjs, SiJavascript,
   SiPython, SiDjango,
   SiPostgresql, SiDocker, SiGit,
-  SiAmazonaws, SiVercel, SiNetlify,
+  SiAmazonaws, SiVercel, SiNetlify, SiRailway,
   SiAppstore,
 } from 'react-icons/si'
 import { TbBrandReactNative } from 'react-icons/tb'
@@ -20,6 +20,7 @@ const skills = [
   { name: 'AWS', icon: SiAmazonaws, color: '#FF9900' },
   { name: 'Vercel', icon: SiVercel, color: '' },
   { name: 'Netlify', icon: SiNetlify, color: '#00C7B7' },
+  { name: 'Railway', icon: SiRailway, color: '' },
   { name: 'App Store', icon: SiAppstore, color: '#0D96F6' },
 ]
 
@@ -35,7 +36,7 @@ const Skills = () => {
           <div
             key={skill.name}
             className="group flex flex-col items-center gap-2.5 p-5 rounded-2xl
-                       bg-surface border border-border w-24
+                       bg-surface border border-border w-24 h-28
                        hover:border-primary/40 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/5
                        transition-all duration-300"
           >

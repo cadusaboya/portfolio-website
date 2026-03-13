@@ -22,34 +22,33 @@ const Card = ({ title, description, imageUrl, skills, githubUrl, mediumUrl, live
                           hover:shadow-2xl hover:shadow-primary/10">
         <div className="flex flex-col md:flex-row">
           {/* Image */}
-          <div className="relative overflow-hidden md:w-1/2 aspect-video md:aspect-auto md:min-h-[360px]">
+          <div className="overflow-hidden md:w-1/2 flex items-stretch">
             <Image
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+              width={1280}
+              height={720}
               src={imageUrl}
               alt={`Screenshot of ${title}`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent md:bg-gradient-to-r" />
           </div>
 
           {/* Content */}
-          <div className="p-7 md:p-10 md:w-1/2 flex flex-col justify-center">
-            <span className="inline-block text-xs font-bold gradient-text uppercase tracking-widest mb-3">
+          <div className="p-5 md:p-7 md:w-1/2 flex flex-col justify-center">
+            <span className="inline-block text-xs font-bold gradient-text uppercase tracking-widest mb-2">
               Featured Project
             </span>
-            <h3 className="text-3xl font-bold text-text-primary mb-4">{title}</h3>
+            <h3 className="text-2xl font-bold text-text-primary mb-2">{title}</h3>
 
-            <p className="text-text-secondary text-sm leading-relaxed mb-6">
+            <p className="text-text-secondary text-sm leading-relaxed mb-4">
               {description}
             </p>
 
             {skills.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-1.5 mb-4">
                 {skills.map((skill) => (
                   <span key={skill}
                     className="skill-tag inline-block bg-primary/10 text-primary rounded-full
-                               px-3 py-1 text-xs font-medium">
+                               px-2.5 py-0.5 text-xs font-medium">
                     {skill}
                   </span>
                 ))}
@@ -75,7 +74,7 @@ const Card = ({ title, description, imageUrl, skills, githubUrl, mediumUrl, live
                 <a href={liveUrl} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-text-secondary
                              hover:text-text-primary transition-colors font-medium">
-                  <FiExternalLink size={16} /> Live Demo
+                  <FiExternalLink size={16} /> Check it out
                 </a>
               )}
             </div>
@@ -125,7 +124,7 @@ const Card = ({ title, description, imageUrl, skills, githubUrl, mediumUrl, live
             )}
           </div>
         </div>
-        <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-4">
+        <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-6">
           {description}
         </p>
         {skills.length > 0 && (
