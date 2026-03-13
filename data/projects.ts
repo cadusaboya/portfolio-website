@@ -13,7 +13,7 @@ export const featuredProject: Project = {
   description:
     'A SaaS financial management platform built for Brazilian law firms. Live in production with a paying client on an annual plan. Multi-tenant architecture with subscription billing, revenue and expense tracking, commission management, and automated PDF financial reports.',
   imageUrl: '/vincor.png',
-  skills: ['Next.js', 'TypeScript', 'Python (Django)', 'PostgreSQL', 'Railway', 'Vercel'],
+  skills: ['Next.js', 'TypeScript', 'Python (Django)', 'PostgreSQL', 'Railway', 'Vercel', 'Netlify'],
   githubUrl: 'https://github.com/cadusaboya/adview',
   liveUrl: 'https://app.vincorapp.com.br',
 }
