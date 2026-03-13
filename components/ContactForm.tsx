@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
 import { FaMedium } from 'react-icons/fa6'
 import { FiMail, FiMapPin } from 'react-icons/fi'
-import { toast } from 'sonner'
+import toast from 'react-hot-toast'
 import axios from 'axios'
 
 interface ContactFormData {
@@ -38,10 +38,10 @@ const ContactForm = () => {
     setSending(true)
     try {
       await axios.post('/api/send/', data)
+      toast.success("Email sent successfully!")
       setIsSent(true)
-      toast.success('Email sent successfully!')
     } catch {
-      toast.error('Failed to send email. Please try again.')
+      toast.error("Failed to send email. Please try again.")
     } finally {
       setSending(false)
     }
